@@ -1,0 +1,47 @@
+﻿@inherits LayoutComponentBase
+
+<div class="bg-info text-white p-2">
+    <span class="navbar-brand m-lg-2">Bookstore Administration</span>
+</div>
+
+@*Added Button Sidebar information about the admin page*@
+<div class="offcanvas offcanvas-start" id="demo">
+    <div class="offcanvas-header">
+        <h1 class="offcanvas-title">Added Admin Features</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <p>1) View, Create, Update, and Delete Books.</p>
+        <p>2) View Orders and mark as Shipped. (The list should automatically update as marked.)</p>
+        <p>I learned how to <mark>mark</mark> words with bootstrap</p> @*Added a bootstrap mark on the word mark*@
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <div class="row p-2">
+
+        <div class="col-3">
+
+            <div class="d-grid gap-2">
+                <NavLink class="btn btn-outline-primary" href="/admin/books"
+                         ActiveClass="btn-primary text-white" Match="NavLinkMatch.Prefix">Books</NavLink>
+                <NavLink class="btn btn-outline-primary" href="/admin/orders"
+                         ActiveClass="btn-primary text-white" Match="NavLinkMatch.Prefix">Orders</NavLink>
+
+                @* Added Sidebar Button *@
+                <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                    Admin Page Information
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="col">
+            @Body
+        </div>
+
+    </div>
+
+</div>
